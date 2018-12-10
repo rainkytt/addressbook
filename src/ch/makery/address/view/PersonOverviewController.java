@@ -104,20 +104,11 @@ public class PersonOverviewController {
     @FXML
     private void handleDeletePerson() {
         int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
-        personTable.getItems().remove(selectedIndex);
-    }
-
-    /**
-     * Called when the user clicks on the delete button.
-     */
-    @FXML
-    private void handleDeletePerson() {
-        int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             personTable.getItems().remove(selectedIndex);
         } else {
             // Nothing selected.
-            Alert alert = new Alert(AlertType.WARNING);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
             alert.setTitle("No Selection");
             alert.setHeaderText("No Person Selected");
@@ -143,7 +134,7 @@ public class PersonOverviewController {
     /**
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected person.
-     */
+    */
     @FXML
     private void handleEditPerson() {
         Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
@@ -155,7 +146,7 @@ public class PersonOverviewController {
 
         } else {
             // Nothing selected.
-            Alert alert = new Alert(AlertType.WARNING);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
             alert.setTitle("No Selection");
             alert.setHeaderText("No Person Selected");
